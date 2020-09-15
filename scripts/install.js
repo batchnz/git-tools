@@ -20,7 +20,7 @@ _merge(projPackageJson, {
   },
   config: {
     commitizen: {
-      path: `./node_modules/${packageJson.name}/node_modules/cz-conventional-changelog`
+      path: 'cz-conventional-changelog'
     }
   },
   scripts: {
@@ -40,5 +40,5 @@ fs.writeFileSync(`${initCwd}/package.json`, JSON.stringify(projPackageJson));
 try {
   fs.copyFileSync('./config/.gitlab-ci.yml', `${initCwd}/.gitlab-ci.yml`, fs.constants.COPYFILE_EXCL)
 } catch(err) {
-  console.log(chalk.yellow('Pipeline exists, skipping.\n'));
+  console.log(chalk.yellow('GitLab pipeline file exists, skipping.\n'));
 }
