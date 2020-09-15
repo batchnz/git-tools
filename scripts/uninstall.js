@@ -3,10 +3,8 @@
 const fs = require('fs');
 const chalk = require('chalk');
 const _omit = require('lodash/omit');
-const { exec } = require('child_process');
 
 const initCwd = process.env.INIT_CWD;
-const packageJson = require('../package.json');
 const projPackageJson = require(`${initCwd}/package.json`);
 
 process.stdout.write(chalk.green('Removing additional config from your package... '));

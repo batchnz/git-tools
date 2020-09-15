@@ -3,7 +3,6 @@
 const fs = require('fs');
 const chalk = require('chalk');
 const _merge = require('lodash/merge');
-const { exec } = require('child_process');
 
 const initCwd = process.env.INIT_CWD;
 const packageJson = require('../package.json');
