@@ -1,37 +1,32 @@
 {
+  "name": "@batch/git-tools",
   "author": "Josh Smith <josh@batch.nz>",
   "bin": {
-    "git-tools": "./bin/install.js",
-    "git-tools-uninstall": "./bin/uninstall.js"
+    "batch-commit": "./bin/commit.js",
+    "commitlint": "./node_modules/.bin/commitlint",
+    "husky-run": "./node_modules/.bin/husky-run",
+    "semantic-release": "./node_modules/.bin/semantic-release"
   },
   "dependencies": {
-    "colors": "^1.2.1"
-  },
-  "config": {
-    "files": [
-      ".commitlintrc.js",
-      ".czrc",
-      ".huskyrc",
-      ".releaserc",
-      ".gitlab-ci.yml"
-    ],
-    "devDependencies": {
-      "@commitlint/cli": "^9.1.2",
-      "@commitlint/config-conventional": "^11.0.0",
-      "@semantic-release/changelog": "^5.0.1",
-      "@semantic-release/git": "^9.0.0",
-      "@semantic-release/gitlab": "^6.0.4",
-      "cz-conventional-changelog": "^3.3.0",
-      "husky": "^4.3.0",
-      "semantic-release": "^17.1.1"
-    }
+    "@batch/semantic-release-gitlab-config": "^1.0.0",
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/gitlab": "^6.0.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.0",
+    "semantic-release": "^17.1.1"
   },
   "description": "Sets up your project with Batch's Git Tools.",
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "lodash": "^4.17.20"
+  },
   "license": "MIT",
-  "name": "git-tools",
   "scripts": {
-    "postinstall": "git-tools",
-    "postuninstall": "git-tools-uninstall"
+    "postinstall": "./scripts/install.js",
+    "postuninstall": "./scripts/uninstall.js"
   },
   "version": "1.0.0"
 }

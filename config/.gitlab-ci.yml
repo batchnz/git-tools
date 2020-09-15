@@ -1,6 +1,5 @@
-# The release pipeline will run only if all jobs in the test pipeline are successful
 stages:
-    - release
+  - release
 
 before_script:
   - npm install
