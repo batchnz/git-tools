@@ -5,8 +5,8 @@ const path = require('path');
 const bootstrap = require('commitizen/dist/cli/git-cz').bootstrap;
 
 bootstrap({
-  cliPath: path.join(__dirname, '../node_modules/commitizen'),
+  cliPath: path.join(__dirname, '../../commitizen'),
   config: {
-    "path": path.join(__dirname, '../node_modules/cz-conventional-changelog')
+    "path": "cz-conventional-changelog"
   }
 });

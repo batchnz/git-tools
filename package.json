@@ -2,10 +2,7 @@
   "name": "@batch/git-tools",
   "author": "Josh Smith <josh@batch.nz>",
   "bin": {
-    "batch-commit": "bin/commit.js",
-    "commitlint": "node_modules/.bin/commitlint",
-    "husky-run": "node_modules/.bin/husky-run",
-    "semantic-release": "node_modules/.bin/semantic-release"
+    "batch-commit": "bin/commit.js"
   },
   "dependencies": {
     "@batch/semantic-release-gitlab-config": "^1.0.0",
@@ -18,16 +15,6 @@
     "husky": "^4.3.0",
     "semantic-release": "^17.1.1"
   },
-  "bundledDependencies": [
-    "@commitlint/cli",
-    "@commitlint/config-conventional",
-    "@semantic-release/changelog",
-    "@semantic-release/git",
-    "@semantic-release/gitlab",
-    "cz-conventional-changelog",
-    "husky",
-    "semantic-release"
-  ],
   "description": "Sets up your project with Batch's Git Tools.",
   "devDependencies": {
     "chalk": "^4.1.0",
@@ -38,7 +25,7 @@
     "postinstall": "./scripts/install.js",
     "postuninstall": "./scripts/uninstall.js"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "scripts/install.js",
   "repository": {
     "type": "git",
