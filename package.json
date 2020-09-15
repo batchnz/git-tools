@@ -2,10 +2,10 @@
   "name": "@batch/git-tools",
   "author": "Josh Smith <josh@batch.nz>",
   "bin": {
-    "batch-commit": "./bin/commit.js",
-    "commitlint": "./node_modules/.bin/commitlint",
-    "husky-run": "./node_modules/.bin/husky-run",
-    "semantic-release": "./node_modules/.bin/semantic-release"
+    "batch-commit": "bin/commit.js",
+    "commitlint": "node_modules/.bin/commitlint",
+    "husky-run": "node_modules/.bin/husky-run",
+    "semantic-release": "node_modules/.bin/semantic-release"
   },
   "dependencies": {
     "@batch/semantic-release-gitlab-config": "^1.0.0",
@@ -28,5 +28,14 @@
     "postinstall": "./scripts/install.js",
     "postuninstall": "./scripts/uninstall.js"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "main": "scripts/install.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batchnz/git-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/batchnz/git-tools/issues"
+  },
+  "homepage": "https://github.com/batchnz/git-tools#readme"
 }
