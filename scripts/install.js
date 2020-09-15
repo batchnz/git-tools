@@ -37,9 +37,8 @@ console.log(chalk.green('done!\n'));
 fs.writeFileSync(`${initCwd}/package.json`, JSON.stringify(projPackageJson));
 
 // Copy the GitLab pipeline to the project
-fs.copyFileSync('./config/.gitlab-ci.yml', `${initCwd}/.gitlab-ci.yml`, fs.constants.COPYFILE_EXCL);
-
-console.log(chalk.green('Installing Husky...\n'));
-
-// Run the husky installation
-exec('node ./node_modules/husky/husky install', (error, stdout, stderr) => console.log(stdout));
+try {
+  fs.copyFileSync('./config/.gitlab-ci.yml', `${initCwd}/.gitlab-ci.yml`, fs.constants.COPYFILE_EXCL)
+} catch(err) {
+  console.log(chalk.yellow('Pipeline exists, skipping.\n'));
+}

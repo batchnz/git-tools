@@ -23,8 +23,3 @@ fs.writeFileSync(`${initCwd}/package.json`, JSON.stringify(newProjPackageJson));
 fs.unlink(`${initCwd}/.gitlab-ci.yml`, (err) => {
   if (err) throw err;
 });
-
-console.log(chalk.green('Removing Husky...\n'));
-
-// Run the husky installation
-exec('node ./node_modules/husky/husky uninstall', (error, stdout, stderr) => console.log(stdout));
