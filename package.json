@@ -18,6 +18,9 @@
     "husky": "^4.3.0",
     "semantic-release": "^17.1.1"
   },
+  "bundledDependencies": [
+    "cz-conventional-changelog"
+  ],
   "description": "Sets up your project with Batch's Git Tools.",
   "devDependencies": {
     "chalk": "^4.1.0",
