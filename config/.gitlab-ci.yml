@@ -1,11 +1,19 @@
 stages:
   - release
 
+# Cache modules in between jobs
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm/
+
 before_script:
-  - npm install
+  - npm ci --cache .npm --prefer-offline
 
 publish:
   image: node:12
   stage: release
+  only:
+    - master
   script:
     - npx semantic-release
