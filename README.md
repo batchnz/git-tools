@@ -133,10 +133,10 @@ You can change the Commitlint config by altering the husky command in your packa
 Simply change the`husky.hooks.commit-msg` object to:
 ```
 "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS
-    }
-  },
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS
+  }
+},
 ``` 
 and add a `commitlint.config.js` file to your project root to override the package default.
 
@@ -153,6 +153,8 @@ You can change the Semantic Release config by updating the `release.extends` pro
   "extends": "my-custom-config-package"
 }
 ```
+
+_Note: `config['@batch/git-tools'].installed` must be `true` otherwise it will overwrite any custom package.json config in CI environments_
 
 <!-- ROADMAP -->
 ## Roadmap
