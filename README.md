@@ -21,7 +21,6 @@
     <a href="https://github.com/batchnz/git-tools"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    ·
     <a href="https://github.com/batchnz/git-tools/issues">Report Bug</a>
     ·
     <a href="https://github.com/batchnz/git-tools/issues">Request Feature</a>
@@ -50,7 +49,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This package provides a series of "git-tools" for running repositories the "Batch way", following the conventional commits specification. We've bundled `commitizen`, `commitlint` and `semantic-release` to automatically format and lint commit messages and tag and generate changelogs based on your commit messages for each release.
+This package provides a series of Git tools for running repositories the "Batch way", following the conventional commits specification. We've bundled `commitizen`, `commitlint` and `semantic-release` to automatically format and lint commit messages and tag and generate changelogs based on your commit messages for each release.
+
+Our workflow goes something like this:
+1. A new branch is created from master
+2. Changes are committed using Commitizen and linted with Commitlint
+3. A pull request is raised targeting the master branch
+4. Once merged, a GitLab pipeline will run analysing the new commits and generating a changelog, release notes and semver tag
+
+The idea behind this project was to create a simple installable dev tool that enforces consistest, high quality commit messages with auto-generated changelogs/release notes and to remove human emotion from the versioning.
 
 
 ### Built With
@@ -176,7 +183,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@batchnz](https://twitter.com/batchnz) - development@batch.nz
+Josh Smith - [@batchnz](https://twitter.com/batchnz) - josh@batch.nz
 
 Project Link: [https://github.com/batchnz/git-tools](https://github.com/batchnz/git-tools)
 
