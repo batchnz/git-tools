@@ -25,7 +25,7 @@
     "postinstall": "./scripts/install.js",
     "postuninstall": "./scripts/uninstall.js"
   },
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "scripts/install.js",
   "repository": {
     "type": "git",
