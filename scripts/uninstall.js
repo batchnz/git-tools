@@ -21,7 +21,7 @@ process.stdout.write(chalk.green('Removing additional config from your package..
 // Remove config options
 const newProjPackageJson = _omit(projPackageJson, 'husky', 'scripts.commit', 'config.commitizen', `config.${packageJson.name}`, 'release');
 
-console.log(chalk.green('done!\n'));
+console.log(chalk.green('done!'));
 
 // Write back the json file
 fs.writeFileSync(`${initCwd}/package.json`, JSON.stringify(newProjPackageJson));
