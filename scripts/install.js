@@ -2,11 +2,26 @@
 
 const fs = require('fs');
 const chalk = require('chalk');
+const _has = require('lodash/has');
 const _merge = require('lodash/merge');
 
 const initCwd = process.env.INIT_CWD;
-const packageJson = require('../package.json');
-const projPackageJson = require(`${initCwd}/package.json`);
+let packageJson;
+let projPackageJson;
+
+try {
+  packageJson = require('../package.json');
+  projPackageJson = require(`${initCwd}/package.json`);
+} catch(err) {
+  console.log(chalk.red('Error: Missing package.json'));
+  process.exit(1);
+}
+
+// Determine if this package is already installed (useful for CI pipelines)
+if( _has(projPackageJson, `config.${packageJson.name}.installed`) ){
+  console.log(chalk.green(packageJson.name+' is already configured... skipping.\n'));
+  process.exit(0);
+}
 
 process.stdout.write(chalk.green('Adding additional config from your package... '));
 
@@ -18,6 +33,9 @@ _merge(projPackageJson, {
     }
   },
   config: {
+    [packageJson.name] : {
+      installed: true
+    },
     commitizen: {
       path: 'cz-conventional-changelog'
     }
