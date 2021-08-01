@@ -15,5 +15,6 @@ publish:
   stage: release
   only:
     - master
+    - main
   script:
     - npx semantic-release
