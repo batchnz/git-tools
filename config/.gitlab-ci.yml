@@ -17,4 +17,4 @@ publish:
     - master
     - main
   script:
-    - npx semantic-release
+    - npx semantic-release --branches ${CI_DEFAULT_BRANCH}
