@@ -18,12 +18,14 @@
   "description": "Sets up your project with Batch's Git Tools.",
   "devDependencies": {
     "chalk": "^5.2.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "husky": "^8.0.0"
   },
   "license": "MIT",
   "scripts": {
     "postinstall": "./scripts/install.js",
-    "postuninstall": "./scripts/uninstall.js"
+    "postuninstall": "./scripts/uninstall.js",
+    "prepare": "husky install"
   },
   "version": "2.0.0",
   "main": "scripts/install.js",

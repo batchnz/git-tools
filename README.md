@@ -79,6 +79,8 @@ To add this tool to your project simply follow these steps:
 
 You'll need a package.json file to add the `git-tools` package. 
 
+You will also need to have a minimum of git `2.9`
+
 If you don't have one simply run:
 
 ```sh
@@ -128,17 +130,18 @@ This package is fully configurable and can be extended in the following ways:
 
 ### Commitlint config
 
-You can change the Commitlint config by altering the husky command in your package.json file. 
+#### Moving Configurations from .huskyrc
 
-Simply change the`husky.hooks.commit-msg` object to:
-```
-"husky": {
-  "hooks": {
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS
-  }
-},
-``` 
-and add a `commitlint.config.js` file to your project root to override the package default.
+`npx husky install`
+
+Note: It will create the .husky directory at the current directory you are when running this.
+
+#### Adding a Hook
+You will use the basis command every time you want to add a new hook to Husky, like:
+npx husky add .husky/<HOOK NAME> "<SCRIPTS TO RUN>"
+
+Add the commit hook;  
+`npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`
 
 ### Commitizen config
 
