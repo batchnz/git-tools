@@ -31,7 +31,7 @@
     "version:minor": "npm version minor && npm run publish-and-tag",
     "version:marjor": "npm version major && npm run publish-and-tag"
   },
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "scripts/install.js",
   "repository": {
     "type": "git",
