@@ -25,7 +25,11 @@
   "scripts": {
     "postinstall": "./scripts/install.js",
     "postuninstall": "./scripts/uninstall.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "publish-and-tag": "git push --tags && git push origin master",
+    "version:patch": "npm version patch && npm run publish-and-tag",
+    "version:minor": "npm version minor && npm run publish-and-tag",
+    "version:marjor": "npm version major && npm run publish-and-tag"
   },
   "version": "2.0.0",
   "main": "scripts/install.js",
